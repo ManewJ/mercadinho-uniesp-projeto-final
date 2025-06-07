@@ -2,17 +2,18 @@ package com.mercadinho.mercadinho_uniesp.service;
 
 import com.mercadinho.mercadinho_uniesp.model.Produto;
 import com.mercadinho.mercadinho_uniesp.repository.ProdutoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@RequiredArgsConstructor
 @Service
 public class ProdutoService {
 
-    @Autowired
-    private ProdutoRepository produtoRepository;
+
+    private final  ProdutoRepository produtoRepository;
 
     public Produto criar(Produto produto) {
         return produtoRepository.save(produto);

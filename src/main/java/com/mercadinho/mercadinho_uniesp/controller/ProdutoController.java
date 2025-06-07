@@ -2,7 +2,7 @@ package com.mercadinho.mercadinho_uniesp.controller;
 
 import com.mercadinho.mercadinho_uniesp.model.Produto;
 import com.mercadinho.mercadinho_uniesp.service.ProdutoService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,12 +11,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Map;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/produtos")
 public class ProdutoController {
 
-    @Autowired
-    private ProdutoService produtoService;
+
+    private final ProdutoService produtoService;
 
     // POST /Cria um novo produto
     @PostMapping
